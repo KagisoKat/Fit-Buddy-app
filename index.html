@@ -4,9 +4,9 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Todo List 2022 with LocalStorage</title>
+	<title>Fit Buddy app</title>
 	<!-- CSS Import -->
-	<link rel="stylesheet" href="main.css" />
+	
 	<!-- End of CSS Import -->
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 		<!-- Greeting -->
 		<section class="greeting">
 			<h2 class="title">
-				What's up, <input type="text" id="name" placeholder="Name here" />
+				Hi Fit Buddy, <input type="text" id="name" placeholder="Name here" />
 			</h2>
 		</section>
 		<!-- End of Greeting -->
@@ -33,21 +33,21 @@
 				<h4>What's on your todo?</h4>
 				<input 
 					type="text" 
-					placeholder="e.g. Get some milk"
+					placeholder="Go for a walk"
 					name="content"
 					id="content" />
 				
-				<h4>Pick a category</h4>
+				<h4>Select a category</h4>
 				<div class="options">
 					<label>
 						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
+						<span class="important"></span>
+						<div>Important</div>
 					</label>
 					<label>
 						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
+						<span class="other"></span>
+						<div>Other</div>
 					</label>
 				</div>
 
