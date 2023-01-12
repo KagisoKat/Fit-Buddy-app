@@ -107,6 +107,12 @@ h4 {
 	cursor: pointer;
 }
 
+#duedate{
+    display: flex;
+	flex-direction: row;
+    justify-content: end;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
 	display: none;
@@ -171,9 +177,25 @@ input:checked ~ .bubble::after {
 	cursor: pointer;
 	transition: 0.2s ease-out;
 }
+ 
 
 .create-todo input[type="submit"]:hover {
 	opacity: 0.75;
+}
+
+#duedate{
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    align-content: center;
+    margin-left: 1060px;
+    
+}
+
+#tdlist{
+ display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
 }
 
 .todo-list .list {

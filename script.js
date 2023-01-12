@@ -75,14 +75,14 @@ function DisplayTodos () {
 		deleteButton.classList.add('delete');
 
 		content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
-        userdate.innerHTML = `<input type="text" value="${todo.dueDate}" readonly>`;
+        userdate.innerHTML = `<input type="date" value="${todo.dueDate}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
 
 		label.appendChild(input);
 		label.appendChild(span);
-		actions.appendChild(edit);
         actions.appendChild(userdate);
+		actions.appendChild(edit);
 		actions.appendChild(deleteButton);
 		todoItem.appendChild(label);
 		todoItem.appendChild(content);
