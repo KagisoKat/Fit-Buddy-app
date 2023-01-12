@@ -51,6 +51,33 @@ function DisplayTodos () {
         const edit = document.createElement("button");
         const deleteButton = document.createElement("button");
         
+        input.type = "checkbox";
+        input.checked = todo.done;
+        span.classList.add("bubble")
+
+        if (todo.category == "personal") {
+            span.classList.add("personal");
+        } else {
+           span.classList.add("business"); 
+        }
+        
+        content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+		edit.innerHTML = 'Edit';
+		deleteButton.innerHTML = 'Delete';
+
+		label.appendChild(input);
+		label.appendChild(span);
+		actions.appendChild(edit);
+		actions.appendChild(deleteButton);
+		todoItem.appendChild(label);
+		todoItem.appendChild(content);
+		todoItem.appendChild(actions);
+
+		todoList.appendChild(todoItem);
+
+		if (todo.done) {
+			todoItem.classList.add('done');
+        }
         
     });
 
