@@ -1,3 +1,5 @@
+
+// the below variable is global and can be used outside of scope
 window.addEventListener("load", () => {
     todo = JSON.parse(localStorage.getItem("todos")) || [];
     const nameInput = document.querySelector("#name");
@@ -19,6 +21,39 @@ window.addEventListener("load", () => {
             done: false,
             createdAt: new Date().getDate()
         }
+
+        todos.push(todo);
+
+        localStorage.setItem("todos", JSON.stringify(todos));
+
+        e.target.reset();
+
+        DisplayTodos();
+
     })
 
 })
+
+function DisplayTodos () {
+    const todoList = document.querySelector("#todo-list");
+
+    todoList.innerHTML = "";
+
+    todos.forEach(todo => {
+        const todoItem = document.createElement("div");
+        todoItem.classList.add("todo-item")
+
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        const span = document.createElement("span");
+        const content = document.createElement("div");
+        const actions = document.createElement("div");
+        const edit = document.createElement("button");
+        const deleteButton = document.createElement("button");
+        
+        
+    });
+
+
+
+}
