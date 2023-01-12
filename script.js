@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
 	const newTodoForm = document.querySelector('#new-todo-form');
 
 	const username = localStorage.getItem('username') || '';
+    const dueDate = document.querySelector("#date")
 
 	nameInput.value = username;
 
@@ -21,9 +22,9 @@ window.addEventListener('load', () => {
 			content: e.target.elements.content.value,
 			category: e.target.elements.category.value,
 			done: false,
-			createdAt: new Date().getDate()
+			dueDate: e.target.elements.date.value
 		}
-
+        console.log(todos);
 		todos.push(todo);
 
 		localStorage.setItem('todos', JSON.stringify(todos));
@@ -38,6 +39,7 @@ window.addEventListener('load', () => {
 })
 
 function DisplayTodos () {
+    
 	const todoList = document.querySelector('#todo-list');
 	todoList.innerHTML = "";
     todos.sort((a, b) => {
@@ -45,6 +47,7 @@ function DisplayTodos () {
         if (b.content > a.content) return -1;
         }
     )
+   
 	todos.forEach(todo => {
 		const todoItem = document.createElement('div');
 		todoItem.classList.add('todo-item');
@@ -54,6 +57,7 @@ function DisplayTodos () {
 		const span = document.createElement('span');
 		const content = document.createElement('div');
 		const actions = document.createElement('div');
+        const userdate = document.createElement("label");
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
 
@@ -71,17 +75,18 @@ function DisplayTodos () {
 		deleteButton.classList.add('delete');
 
 		content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+        userdate.innerHTML = `<input type="text" value="${todo.dueDate}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
 
 		label.appendChild(input);
 		label.appendChild(span);
 		actions.appendChild(edit);
+        actions.appendChild(userdate);
 		actions.appendChild(deleteButton);
 		todoItem.appendChild(label);
 		todoItem.appendChild(content);
 		todoItem.appendChild(actions);
-
 		todoList.appendChild(todoItem);
 
 		if (todo.done) {
