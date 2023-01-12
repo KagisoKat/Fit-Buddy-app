@@ -78,7 +78,39 @@ function DisplayTodos () {
 		if (todo.done) {
 			todoItem.classList.add('done');
         }
-        
+
+        input.addEventListener('change', (e) => {
+			todo.done = e.target.checked;
+			localStorage.setItem('todos', JSON.stringify(todos));
+
+			if (todo.done) {
+				todoItem.classList.add('done');
+			} else {
+				todoItem.classList.remove('done');
+			}
+
+			DisplayTodos()
+
+		})
+
+		edit.addEventListener('click', (e) => {
+			const input = content.querySelector('input');
+			input.removeAttribute('readonly');
+			input.focus();
+			input.addEventListener('blur', (e) => {
+				input.setAttribute('readonly', true);
+				todo.content = e.target.value;
+				localStorage.setItem('todos', JSON.stringify(todos));
+				DisplayTodos()
+
+			})
+		})
+
+		deleteButton.addEventListener('click', (e) => {
+			todos = todos.filter(t => t != todo);
+			localStorage.setItem('todos', JSON.stringify(todos));
+			DisplayTodos()
+		})
     });
 
 
