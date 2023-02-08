@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Fit Buddy</title>
 	<!-- CSS Import -->
-	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="css/styles.css" />
 	<!-- End of CSS Import -->
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+		rel="stylesheet">
 	<!-- End of Fonts -->
 </head>
+
 <body>
 	<!-- App Wrapper -->
 	<main class="app">
 		<!-- Greeting -->
 		<section class="greeting">
 			<h2 class="title">
-			Hi Fit Buddy, <input type="text" id="name" placeholder="Name here" />
+				Hi Fit Buddy, <input type="text" id="name" placeholder="Name here" />
 			</h2>
 		</section>
 		<!-- End of Greeting -->
-		
+
 		<!-- New Todo -->
 		<section class="create-todo">
 			<h3>CREATE A TODO</h3>
 			<form id="new-todo-form">
 				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g Go for a walk"
-					name="content"
-					id="content" />
-				
+				<input type="text" placeholder="e.g Go for a walk" name="content" id="content" />
+
 				<h4>Select a category</h4>
 				<div class="options">
 					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
+						<input type="radio" name="category" id="category1" value="business" />
 						<span class="bubble business"></span>
 						<div>For Clients</div>
 					</label>
@@ -49,8 +49,8 @@
 						<div>For me</div>
 					</label>
 				</div>
-                <label for="date">Pick a date</label>
-                <input type="date" name="date" id="date">
+				<label for="date">Pick a date</label>
+				<input type="date" name="date" id="date">
 				<input type="submit" value="Add todo" />
 			</form>
 		</section>
@@ -58,18 +58,23 @@
 
 		<!-- Todo List -->
 		<section class="todo-list">
-			<div id="tdlist"><h3>TODO LIST</h3></div>
-            <div id="duedate"><h3 >DUE DATE</h3></div>
+			<div id="tdlist">
+				<h3>TODO LIST</h3>
+			</div>
+			<div id="duedate">
+				<h3>DUE DATE</h3>
+			</div>
 			<div class="list" id="todo-list"></div>
 		</section>
-        
+
 		<!-- End of Todo List -->
 
 	</main>
 	<!-- End of App Wrapper -->
 
 	<!-- JS Import -->
-	<script src="script.js"></script>
+	<script src="script/script.js"></script>
 	<!-- End of JS Import -->
 </body>
+
 </html>
